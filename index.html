@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sera Fine Silk | Wedding & Gift Guide</title>
+  <title>Sera Fine Silk | Editorial Edit</title>
   <style>
     :root {
-      --bg: #f5efe6;
-      --paper: #fffaf4;
-      --paper-soft: #f8f1e8;
-      --ink: #2d1f1a;
-      --muted: #6f5b52;
-      --line: #e3d5c7;
+      --bg: #f8f0e8;
+      --paper: #fff9f3;
+      --ink: #2f1f1a;
+      --muted: #745f56;
+      --line: #e6d5c5;
       --wine: #7a243d;
-      --gold: #c29247;
-      --shadow: 0 20px 44px rgba(77, 53, 41, 0.12);
+      --gold: #c4924c;
+      --shadow: 0 22px 44px rgba(73, 49, 38, 0.1);
       --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --max: 1180px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1320px;
       --heading: Baskerville, "Palatino Linotype", serif;
       --body: "Avenir Next", Candara, "Trebuchet MS", sans-serif;
     }
@@ -31,30 +30,21 @@
       color: var(--ink);
       font-family: var(--body);
       background:
-        radial-gradient(circle at top left, rgba(194, 146, 71, 0.12), transparent 22%),
-        linear-gradient(180deg, #f8f2eb 0%, var(--bg) 100%);
-      line-height: 1.64;
+        radial-gradient(circle at top right, rgba(196, 146, 76, 0.14), transparent 22%),
+        linear-gradient(180deg, #fdf7f0 0%, var(--bg) 100%);
+      line-height: 1.45;
     }
 
     a { color: inherit; text-decoration: none; }
     img { display: block; width: 100%; }
 
     .wrap {
-      width: min(var(--max), calc(100% - 32px));
+      width: min(var(--max), calc(100% - 28px));
       margin: 0 auto;
     }
 
-    .eyebrow {
-      display: inline-block;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      color: var(--wine);
-      font-weight: 700;
-    }
-
     .topbar {
-      padding: 22px 0 18px;
+      padding: 20px 0 18px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -63,767 +53,617 @@
 
     .brand {
       font-family: var(--heading);
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
       text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 1rem;
+      font-weight: 700;
     }
 
-    .top-note {
+    .topmeta {
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255, 250, 244, 0.92);
+      background: rgba(255, 249, 243, 0.94);
       border: 1px solid var(--line);
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
 
-    .hero {
-      padding-bottom: 64px;
+    .stage {
+      padding-bottom: 58px;
     }
 
-    .hero-grid {
+    .hero-mosaic {
+      position: relative;
+      min-height: 92vh;
       display: grid;
-      grid-template-columns: minmax(0, 1.06fr) minmax(320px, 0.94fr);
-      gap: 24px;
-      align-items: stretch;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 16px;
     }
 
-    .hero-copy,
-    .hero-collage,
-    .strip-card,
-    .occasion-card,
-    .product-card,
-    .story-card,
-    .faq-card,
-    .sticky-card,
-    .closing-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
+    .pane {
+      border-radius: 28px;
+      overflow: hidden;
+      background: #eadfd3;
       box-shadow: var(--shadow);
     }
 
-    .hero-copy {
-      padding: 30px;
-    }
-
-    .hero-collage {
-      padding: 16px;
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 16px;
-      overflow: hidden;
-    }
-
-    .hero-collage img,
-    .story-visual img,
-    .product-visual img {
+    .pane img {
       height: 100%;
       object-fit: cover;
-      border-radius: 18px;
     }
 
-    .hero-collage .stack {
+    .right-stack {
       display: grid;
       gap: 16px;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .floating-copy {
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      width: min(560px, calc(100% - 56px));
+      padding: 26px;
+      border-radius: 26px;
+      background: rgba(255, 249, 243, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 16px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f5e7db;
+      color: var(--wine);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-weight: 700;
     }
 
     h1, h2, h3 {
       margin: 0;
       font-family: var(--heading);
-      line-height: 1.06;
+      line-height: 1.02;
     }
 
     h1 {
-      margin-top: 12px;
-      font-size: clamp(2.7rem, 5vw, 4.9rem);
-      max-width: 11ch;
+      font-size: clamp(3.1rem, 5vw, 5.4rem);
+      max-width: 8ch;
     }
 
     h2 {
-      font-size: clamp(1.9rem, 3vw, 3rem);
-      max-width: 12ch;
+      font-size: clamp(2rem, 3vw, 3.4rem);
+      max-width: 11ch;
     }
 
-    p {
-      margin: 0;
-      color: var(--muted);
+    p { margin: 0; color: var(--muted); }
+
+    .copy-note {
+      max-width: 34ch;
     }
 
-    .lead {
-      margin-top: 16px;
-      max-width: 58ch;
-      font-size: 1.05rem;
-    }
-
-    .nav-pills {
-      margin-top: 22px;
+    .tag-row {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .nav-pills span {
-      padding: 9px 12px;
+    .tag-row span {
+      padding: 10px 12px;
       border-radius: 999px;
-      background: var(--paper-soft);
+      background: #fff;
       border: 1px solid var(--line);
+      font-size: 0.84rem;
       color: var(--ink);
-      font-size: 0.9rem;
-    }
-
-    .cta-row {
-      margin-top: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
+      font-weight: 700;
     }
 
     .button {
       min-height: 52px;
-      padding: 0 22px;
+      width: fit-content;
       border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      padding: 0 22px;
+      background: linear-gradient(135deg, var(--wine), #5e1b30);
+      color: #fff8f2;
+      border: 1px solid transparent;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      border: 1px solid transparent;
-      transition: transform 180ms ease, box-shadow 180ms ease;
+      box-shadow: 0 16px 28px rgba(122, 36, 61, 0.18);
       cursor: pointer;
+      transition: transform 180ms ease;
     }
 
     .button:hover,
-    .button:focus-visible { transform: translateY(-2px); }
-
-    .button-primary {
-      background: linear-gradient(135deg, var(--wine), #5f1b30);
-      color: #fff8f2;
-      box-shadow: 0 16px 28px rgba(122, 36, 61, 0.18);
+    .button:focus-visible {
+      transform: translateY(-2px);
     }
 
-    .button-secondary {
-      background: #fff;
-      color: var(--ink);
-      border-color: var(--line);
+    section {
+      padding-bottom: 58px;
     }
 
-    section { padding-bottom: 68px; }
-
-    .section-head {
+    .rail-head {
       display: flex;
       justify-content: space-between;
       align-items: end;
-      gap: 18px;
-      margin-bottom: 24px;
-    }
-
-    .section-head p {
-      max-width: 56ch;
-    }
-
-    .strip-grid,
-    .occasion-grid,
-    .product-grid,
-    .story-grid,
-    .faq-grid {
-      display: grid;
       gap: 16px;
+      margin-bottom: 18px;
     }
 
-    .strip-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+    .rail-head p {
+      max-width: 34ch;
     }
 
-    .strip-card {
-      padding: 18px;
+    .occasion-rail {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(230px, 1fr);
+      gap: 16px;
+      overflow-x: auto;
+      padding-bottom: 6px;
     }
 
-    .strip-card strong,
-    .product-card strong,
-    .story-card strong {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--ink);
-      font-family: var(--heading);
-      font-size: 1.15rem;
-    }
-
-    .occasion-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+    .occasion-card,
+    .grid-card,
+    .story-panel,
+    .faq-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
     }
 
     .occasion-card {
-      padding: 20px;
+      border-radius: 24px;
+      overflow: hidden;
       cursor: pointer;
       transition: transform 180ms ease, border-color 180ms ease;
     }
 
     .occasion-card.active {
-      border-color: var(--wine);
       transform: translateY(-3px);
+      border-color: var(--wine);
     }
 
-    .occasion-card small {
+    .occasion-card img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      background: #eadfd3;
+    }
+
+    .occasion-copy {
+      padding: 16px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .occasion-copy small,
+    .grid-copy small {
       display: inline-block;
-      margin-bottom: 8px;
-      color: var(--wine);
-      font-weight: 700;
+      width: fit-content;
+      font-size: 0.72rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-    }
-
-    .occasion-output {
-      margin-top: 16px;
-      padding: 22px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, rgba(122, 36, 61, 0.06), rgba(194, 146, 71, 0.08));
-      border: 1px solid var(--line);
-    }
-
-    .occasion-output strong {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--ink);
-      font-family: var(--heading);
-      font-size: 1.4rem;
-    }
-
-    .product-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .product-card {
-      overflow: hidden;
-    }
-
-    .product-visual {
-      background: #ede4d9;
-      aspect-ratio: 1 / 1;
-    }
-
-    .product-copy {
-      padding: 18px;
-    }
-
-    .product-copy em {
-      display: inline-block;
-      margin-bottom: 10px;
-      font-style: normal;
       color: var(--wine);
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
       font-weight: 700;
     }
 
-    .story-grid {
-      grid-template-columns: 1.05fr 0.95fr;
-      align-items: stretch;
-    }
-
-    .story-visual,
-    .story-card {
-      overflow: hidden;
-    }
-
-    .story-card {
-      padding: 24px;
-      display: grid;
-      gap: 18px;
-    }
-
-    .story-card .stack {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .story-mini {
-      padding: 14px;
-      border-radius: 16px;
-      background: var(--paper-soft);
+    .occasion-quote {
+      margin-top: 16px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #fffaf3, #f5e7db);
       border: 1px solid var(--line);
     }
 
-    .story-mini strong {
-      margin-bottom: 4px;
-      font-size: 1rem;
-    }
-
-    .faq-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .faq-card {
-      padding: 22px;
-    }
-
-    details {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px 18px;
-      background: #fff;
-    }
-
-    summary {
-      list-style: none;
-      cursor: pointer;
+    .occasion-quote strong {
+      display: block;
+      margin-bottom: 8px;
       font-family: var(--heading);
-      font-size: 1.02rem;
+      font-size: 1.35rem;
       color: var(--ink);
     }
 
-    summary::-webkit-details-marker { display: none; }
-
-    details p { margin-top: 12px; }
-
-    .closing-card {
-      padding: 26px;
+    .editorial-grid {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 18px;
-      align-items: center;
-      background: linear-gradient(135deg, #fff8f1, #f4e5d7);
+      grid-template-columns: 1.15fr 0.85fr 0.85fr;
+      gap: 16px;
+      align-items: start;
     }
 
-    .sticky {
-      position: fixed;
-      left: 50%;
-      bottom: 16px;
-      transform: translateX(-50%);
-      width: min(940px, calc(100% - 20px));
-      z-index: 30;
-    }
-
-    .sticky-card {
-      padding: 12px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-    }
-
-    .sticky-info {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
-    .sticky-thumb {
-      width: 64px;
-      height: 64px;
-      border-radius: 14px;
+    .grid-card {
+      border-radius: 24px;
       overflow: hidden;
-      flex: 0 0 auto;
-      background: #efe5d8;
     }
 
-    .sticky-thumb img {
+    .grid-card.tall {
+      grid-row: span 2;
+    }
+
+    .grid-card img {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: #eadfd3;
+    }
+
+    .grid-card.tall img {
+      aspect-ratio: 4 / 5;
+    }
+
+    .grid-copy {
+      padding: 16px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .grid-copy h3 {
+      font-size: 1.3rem;
+    }
+
+    .story-flow {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .story-panel {
+      border-radius: 26px;
+      overflow: hidden;
+      position: relative;
+      min-height: 520px;
+    }
+
+    .story-panel img {
+      position: absolute;
+      inset: 0;
       height: 100%;
       object-fit: cover;
     }
 
-    .sticky-copy strong {
-      display: block;
-      color: var(--ink);
-      font-family: var(--heading);
+    .story-overlay {
+      position: absolute;
+      inset: auto 18px 18px 18px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255, 249, 243, 0.88);
+      backdrop-filter: blur(10px);
+      display: grid;
+      gap: 8px;
     }
 
-    .sticky-copy span {
+    .faq-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .faq-card {
+      border-radius: 20px;
+      padding: 16px;
+    }
+
+    .faq-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-family: var(--heading);
+      font-size: 1.1rem;
+      color: var(--ink);
+    }
+
+    .float-cta {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 18px;
+      background: rgba(255, 249, 243, 0.96);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      z-index: 32;
+    }
+
+    .float-cta img {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      object-fit: cover;
+      background: #eadfd3;
+    }
+
+    .float-copy strong {
+      display: block;
+      font-family: var(--heading);
+      color: var(--ink);
+    }
+
+    .float-copy span {
       display: block;
       color: var(--muted);
-      font-size: 0.92rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      font-size: 0.88rem;
+      max-width: 180px;
     }
 
-    @media (max-width: 980px) {
-      .hero-grid,
-      .story-grid,
-      .closing-card,
-      .strip-grid,
-      .occasion-grid,
-      .product-grid,
-      .faq-grid {
+    @media (max-width: 1040px) {
+      .hero-mosaic,
+      .editorial-grid,
+      .story-flow,
+      .faq-strip {
         grid-template-columns: 1fr;
       }
 
-      .hero-collage {
-        grid-template-columns: 1fr;
+      .right-stack {
+        grid-template-rows: auto;
       }
-
-      .section-head { align-items: start; }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 760px) {
       .topbar {
         flex-direction: column;
         align-items: start;
       }
 
-      .hero-copy,
-      .hero-collage,
-      .strip-card,
-      .occasion-card,
-      .story-card,
-      .faq-card,
-      .closing-card {
-        padding: 20px;
+      .hero-mosaic {
+        min-height: auto;
       }
 
-      .cta-row,
-      .sticky-card {
-        flex-direction: column;
-        align-items: stretch;
+      .pane {
+        min-height: 280px;
       }
 
-      .button { width: 100%; }
+      .floating-copy {
+        position: static;
+        width: 100%;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .float-cta {
+        left: 10px;
+        right: 10px;
+        justify-content: space-between;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="wrap">
-      <div class="topbar">
-        <div class="brand">Sera Fine Silk Occasion Edit</div>
-        <div class="top-note">Styled like a wedding commerce guide, but narrowed to the product decisions that close faster.</div>
-      </div>
-
-      <div class="hero-grid">
-        <article class="hero-copy">
-          <div class="eyebrow">Wedding / gift / formal occasion traffic</div>
-          <h1>Sell the occasion first, and luxury accessories get easier to buy.</h1>
-          <p class="lead">
-            The best wedding and formalwear CPS pages do not drown users in product grids. They make the shopper feel
-            immediately styled. This version borrows that commerce rhythm while keeping the actual product story centered
-            on Sera Fine Silk's real silk accessories and gifting cues.
-          </p>
-          <div class="nav-pills">
-            <span>Designed in Milan</span>
-            <span>Made with Como silk</span>
-            <span>Gift box and handwritten note angle</span>
-            <span>Express-delivery friendly occasion traffic</span>
-          </div>
-          <div class="cta-row">
-            <a class="button button-primary" data-aff-link href="#">Shop Sera Fine Silk</a>
-            <a class="button button-secondary" href="#occasion-grid">Pick the occasion</a>
-          </div>
-          <p style="margin-top:14px;" id="heroOccasionNote">Recommended angle: wedding guest and black-tie traffic, where one elegant accessory can complete the decision fast.</p>
-        </article>
-
-        <aside class="hero-collage">
-          <img id="heroLifestyle" alt="">
-          <div class="stack">
-            <img id="heroProduct" alt="" loading="lazy">
-            <img id="heroCollection" alt="" loading="lazy">
-          </div>
-        </aside>
-      </div>
+  <header class="wrap">
+    <div class="topbar">
+      <div class="brand">Sera Fine Silk Occasion Edit</div>
+      <div class="topmeta">Wedding, gift, and black-tie edit.</div>
     </div>
   </header>
 
   <main class="wrap">
-    <section>
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Why This Shape Sells</div>
-          <h2>It looks closer to a wedding style guide than a generic product page.</h2>
+    <section class="stage">
+      <div class="hero-mosaic">
+        <figure class="pane"><img id="heroImage" alt=""></figure>
+        <div class="right-stack">
+          <figure class="pane"><img id="heroSideOne" loading="lazy" alt=""></figure>
+          <figure class="pane"><img id="heroSideTwo" loading="lazy" alt=""></figure>
         </div>
-        <p>
-          The layout borrows the structure of popular wedding-accessory commerce pages: hero look, occasion navigation,
-          curated picks, and visual gifting reassurance rather than a long wall of product text.
-        </p>
-      </div>
-      <div class="strip-grid">
-        <article class="strip-card">
-          <strong>Occasion-led</strong>
-          <p>Wedding, black tie, gifting, and “help me look polished” traffic converts faster than broad menswear browsing.</p>
-        </article>
-        <article class="strip-card">
-          <strong>Category focus</strong>
-          <p>Ties, bow ties, pocket squares, and gifting accessories are easier to buy than size-sensitive clothing.</p>
-        </article>
-        <article class="strip-card">
-          <strong>Luxury made legible</strong>
-          <p>Real product photography, refined product cards, and gifting images make the premium angle feel tangible.</p>
-        </article>
-        <article class="strip-card">
-          <strong>Service confidence</strong>
-          <p>Free shipping threshold, express delivery, gift box, and styling help all reduce hesitation close to checkout.</p>
-        </article>
+        <div class="floating-copy">
+          <div class="eyebrow">Wedding / gifting / black tie</div>
+          <h1>Dress better. Gift better. Think less.</h1>
+          <p class="copy-note">Silk finishing pieces for weddings, gifts, and formal nights.</p>
+          <div class="tag-row">
+            <span>Designed in Milan</span>
+            <span>Como silk story</span>
+            <span>Gift-ready positioning</span>
+          </div>
+          <a class="button" data-aff-link href="#">Shop the edit</a>
+        </div>
       </div>
     </section>
 
-    <section id="occasion-grid">
-      <div class="section-head">
+    <section>
+      <div class="rail-head">
         <div>
-          <div class="eyebrow">Occasion Selector</div>
-          <h2>Guide the buyer by event first, then let the product choice feel obvious.</h2>
+          <div class="eyebrow">Occasion gallery</div>
+          <h2>Buy by moment, not by menu.</h2>
         </div>
-        <p>
-          Click a card to update the recommendation language in the page close and sticky CTA.
-        </p>
+        <p>Choose the moment. Shop the matching mood.</p>
       </div>
-      <div class="occasion-grid">
-        <article class="occasion-card active" data-occasion-card data-title="Wedding Guest" data-copy="Start with a silk tie or pocket square that sharpens a navy, grey, or beige suit without overcomplicating the outfit." data-note="Current recommendation: wedding guest traffic should land on a tie-led or pocket-square-led edit.">
-          <small>Most versatile</small>
-          <h3>Wedding Guest</h3>
-          <p>Elegant, celebratory, and easiest to convert from paid search or style-led social traffic.</p>
-        </article>
-        <article class="occasion-card" data-occasion-card data-title="Black Tie" data-copy="Lead with bow ties, tuxedo-ready polish, and a confidence-first message. The user wants formality solved, not explored." data-note="Current recommendation: black-tie traffic should land on a bow-tie-led edit with strong formal confidence cues.">
-          <small>Formal certainty</small>
-          <h3>Black Tie</h3>
-          <p>Best for gala, tuxedo, and evening-event traffic that needs a finished answer fast.</p>
-        </article>
-        <article class="occasion-card" data-occasion-card data-title="Gift Ready" data-copy="Use the signature box, handwritten note, and elegant finishing details to reduce the hardest part of premium gifting: uncertainty." data-note="Current recommendation: gift traffic should see gifting visuals and packaging cues before broad assortment.">
-          <small>Luxury gifting</small>
-          <h3>Gift Ready</h3>
-          <p>Turns premium accessories into a personal but still manageable present.</p>
-        </article>
-        <article class="occasion-card" data-occasion-card data-title="Groom Party" data-copy="Keep the message around coordinated polish, refined finishing details, and easy add-on accessories rather than full outfit complexity." data-note="Current recommendation: groom-party traffic should start with matching accessory logic, not catalog depth.">
-          <small>Group styling</small>
-          <h3>Groom Party</h3>
-          <p>Strong when a buyer needs a polished shared look without committing to a full suiting purchase.</p>
-        </article>
-      </div>
-      <div class="occasion-output">
-        <div class="eyebrow">Current recommendation</div>
+
+      <div class="occasion-rail" id="occasionRail"></div>
+
+      <div class="occasion-quote">
         <strong id="occasionTitle">Wedding Guest</strong>
-        <p id="occasionCopy">Start with a silk tie or pocket square that sharpens a navy, grey, or beige suit without overcomplicating the outfit.</p>
+        <p id="occasionCopy">Start with a silk tie or pocket square for an easy polished finish.</p>
       </div>
     </section>
 
     <section>
-      <div class="section-head">
+      <div class="rail-head">
         <div>
-          <div class="eyebrow">Curated Product Paths</div>
-          <h2>Real product images make the luxury promise concrete.</h2>
+          <div class="eyebrow">Curated edit</div>
+          <h2>Show fewer things, but show them beautifully.</h2>
         </div>
-        <p>
-          This is where the page shifts from inspiration to selection. The cards are product-led, but still edited like a style guide.
-        </p>
+        <p>See the pieces that do the most with the least effort.</p>
       </div>
-      <div class="product-grid">
-        <article class="product-card">
-          <div class="product-visual"><img id="tieImage" loading="lazy" alt=""></div>
-          <div class="product-copy">
-            <em>Easy first buy</em>
-            <strong>Silk tie</strong>
-            <p>The safest first recommendation for wedding guests and formal-event buyers who want visible polish with little uncertainty.</p>
+
+      <div class="editorial-grid" id="editorialGrid"></div>
+    </section>
+
+    <section>
+      <div class="rail-head">
+        <div>
+          <div class="eyebrow">Gift story</div>
+          <h2>Make the gift feel finished before checkout.</h2>
+        </div>
+        <p>Presentation makes the order feel more valuable.</p>
+      </div>
+
+      <div class="story-flow">
+        <article class="story-panel">
+          <img id="storyOne" loading="lazy" alt="">
+          <div class="story-overlay">
+            <div class="eyebrow">Gift-ready</div>
+            <h3>Luxury detail first</h3>
+            <p>Luxury presentation adds instant gift appeal.</p>
           </div>
         </article>
-        <article class="product-card">
-          <div class="product-visual"><img id="pocketImage" loading="lazy" alt=""></div>
-          <div class="product-copy">
-            <em>Smart add-on</em>
-            <strong>Pocket square</strong>
-            <p>Perfect for gift traffic and style upgrades because it feels elevated without asking the shopper to rebuild an outfit.</p>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="product-visual"><img id="bowImage" loading="lazy" alt=""></div>
-          <div class="product-copy">
-            <em>Formal closer</em>
-            <strong>Bow tie</strong>
-            <p>Black-tie and tuxedo traffic responds best when the page makes the formal answer look crisp and inevitable.</p>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="product-visual"><img id="collectionImage" loading="lazy" alt=""></div>
-          <div class="product-copy">
-            <em>Edited assortment</em>
-            <strong>Color-led collection</strong>
-            <p>The collection image helps the page feel fuller, while the copy keeps users centered on a few high-conviction entry points.</p>
+        <article class="story-panel">
+          <img id="storyTwo" loading="lazy" alt="">
+          <div class="story-overlay">
+            <div class="eyebrow">Formal certainty</div>
+            <h3>One clean finishing piece</h3>
+            <p>One refined finishing piece is often all you need.</p>
           </div>
         </article>
       </div>
     </section>
 
     <section>
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Gift Story</div>
-          <h2>Show the gifting details before the buyer has to imagine them.</h2>
-        </div>
-        <p>
-          Premium gifting converts better when the presentation is visible. That is why this page uses real brand-adjacent gifting and crafted-product imagery instead of abstract copy.
-        </p>
-      </div>
-      <div class="story-grid">
-        <div class="story-visual">
-          <img id="giftHero" loading="lazy" alt="">
-        </div>
-        <article class="story-card">
-          <div>
-            <div class="eyebrow">What helps conversion</div>
-            <h2 style="max-width:none;">Gift-ready details lower premium-purchase hesitation.</h2>
-            <p style="margin-top:12px;">
-              The official FAQ and brand pages highlight the luxury box, handwritten note, and direct-to-recipient options.
-              Those cues belong near the product selection, because that is where the buyer needs reassurance most.
-            </p>
-          </div>
-          <div class="stack">
-            <div class="story-mini">
-              <strong>Luxury box</strong>
-              <p>Use the signature presentation as a visual reason to upgrade from generic gifting.</p>
-            </div>
-            <div class="story-mini">
-              <strong>Handwritten note</strong>
-              <p>Excellent for weddings, anniversaries, and refined last-minute gifting intent.</p>
-            </div>
-            <div class="story-mini">
-              <strong>Express delivery</strong>
-              <p>Important for occasion-led traffic that is often shopping close to the event date.</p>
-            </div>
-            <div class="story-mini">
-              <strong>Style support</strong>
-              <p>Useful for users who need help matching ties, bow ties, or pocket squares to a dress code.</p>
-            </div>
-          </div>
-          <div class="product-visual" style="max-width:340px;">
-            <img id="giftDetail" loading="lazy" alt="">
-          </div>
+      <div class="faq-strip">
+        <article class="faq-card">
+          <strong>Best first buy?</strong>
+          <p>A silk tie or pocket square.</p>
         </article>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">FAQ</div>
-          <h2>Remove the “what if I choose wrong?” friction.</h2>
-        </div>
-        <p>
-          The goal is to make the buyer feel elegantly guided, not examined.
-        </p>
-      </div>
-      <div class="faq-grid">
-        <div class="faq-card">
-          <details open>
-            <summary>What should most paid traffic start with?</summary>
-            <p>A tie or pocket square is the safest first recommendation because it creates visible polish without the complexity of sizing-heavy apparel.</p>
-          </details>
-        </div>
-        <div class="faq-card">
-          <details>
-            <summary>Why is this page occasion-led instead of catalog-led?</summary>
-            <p>Because wedding, black-tie, and gifting buyers often know the moment they are shopping for before they know the exact product they need.</p>
-          </details>
-        </div>
-        <div class="faq-card">
-          <details>
-            <summary>What makes gifting easier here?</summary>
-            <p>Visible packaging, premium presentation, and the option to frame the purchase around one elegant accessory instead of a full outfit.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="closing-card">
-        <div>
-          <div class="eyebrow" style="color:var(--wine);">Final Push</div>
-          <h2 style="max-width:none;">Pick the occasion, then buy the accessory that makes the outfit feel finished.</h2>
-          <p id="closingOccasionNote">Current recommendation: wedding guest traffic should land on a tie-led or pocket-square-led edit.</p>
-        </div>
-        <a class="button button-primary" data-aff-link href="#">Shop the edit</a>
+        <article class="faq-card">
+          <strong>Best for?</strong>
+          <p>Wedding guests, black-tie shoppers, and luxury gifting.</p>
+        </article>
+        <article class="faq-card">
+          <strong>What makes it easy?</strong>
+          <p>Shop by occasion instead of browsing a full catalog.</p>
+        </article>
       </div>
     </section>
   </main>
 
-  <div class="sticky">
-    <div class="sticky-card">
-      <div class="sticky-info">
-        <div class="sticky-thumb"><img id="stickyThumb" alt=""></div>
-        <div class="sticky-copy">
-          <strong id="stickyOfferTitle">Sera Fine Silk</strong>
-          <span id="stickyOfferNote">Current recommendation: wedding guest traffic should land on a tie-led or pocket-square-led edit.</span>
-        </div>
-      </div>
-      <a class="button button-primary" data-aff-link href="#">Explore Sera</a>
+  <div class="float-cta">
+    <img id="floatThumb" alt="">
+    <div class="float-copy">
+      <strong id="floatTitle">Sera Fine Silk</strong>
+      <span id="floatNote">Start with a tie-led edit.</span>
     </div>
+    <a class="button" data-aff-link href="#" style="min-height:46px;padding:0 16px;">Shop now</a>
   </div>
 
   <script>
     const AFFILIATE_URL = "https://www.serafinesilk.com";
     const PRIMARY_OFFER_TITLE = "Sera Fine Silk";
-    const SECONDARY_CTA_TEXT = "Shop Sera Fine Silk";
+    const SECONDARY_CTA_TEXT = "Shop now";
     const FACTS = {
-      origin: "Designed in Milan, crafted with Como silk",
-      gifting: "Gift box and handwritten note angle",
-      shipping: "Free shipping threshold and express delivery matter for event-led traffic"
+      angle: "Luxury editorial lookbook",
+      emphasis: "Pictures first, product second",
+      promise: "Less text, more occasion-led desire"
     };
     const MEDIA = {
-      hero: {
-        src: "assets/sera-fine-silk/wedding-hero.jpg",
-        alt: "Wedding-style menswear hero imagery used for the editorial commerce layout"
+      hero: { src: "assets/sera-fine-silk/wedding-hero.jpg", alt: "Wedding-style fashion hero image" },
+      tie: { src: "assets/sera-fine-silk/tie-product.jpg", alt: "Sera Fine Silk tie image" },
+      pocket: { src: "assets/sera-fine-silk/pocket-square.jpg", alt: "Sera Fine Silk pocket square image" },
+      bow: { src: "assets/sera-fine-silk/bow-tie.jpg", alt: "Sera Fine Silk bow tie image" },
+      collection: { src: "assets/sera-fine-silk/ties-collection.jpg", alt: "Sera Fine Silk ties collection image" },
+      giftNote: { src: "assets/sera-fine-silk/gift-note.jpg", alt: "Gift note and packaging image" },
+      giftSilk: { src: "assets/sera-fine-silk/gift-silk.jpg", alt: "Luxury silk gifting image" }
+    };
+    const OCCASION_STORIES = [
+      {
+        badge: "Fastest close",
+        title: "Wedding Guest",
+        copy: "Start with a silk tie or pocket square for an easy polished finish.",
+        note: "Start with a tie-led edit.",
+        image: MEDIA.tie.src
       },
-      heroProduct: {
-        src: "assets/sera-fine-silk/tie-product.jpg",
-        alt: "Sera Fine Silk patterned tie product image"
+      {
+        badge: "Formal certainty",
+        title: "Black Tie",
+        copy: "Lead with a bow tie when the elegant answer needs to be obvious.",
+        note: "Start with a bow-tie-led edit.",
+        image: MEDIA.bow.src
       },
-      collection: {
-        src: "assets/sera-fine-silk/ties-collection.jpg",
-        alt: "Sera Fine Silk tie collection image"
+      {
+        badge: "Gift-ready",
+        title: "Luxury Gift",
+        copy: "Lead with gift-ready presentation and one refined accessory.",
+        note: "Start with the gift-ready edit.",
+        image: MEDIA.giftSilk.src
       },
-      cards: {
-        tie: {
-          src: "assets/sera-fine-silk/tie-product.jpg",
-          alt: "Blue silk tie from Sera Fine Silk"
-        },
-        pocket: {
-          src: "assets/sera-fine-silk/pocket-square.jpg",
-          alt: "Sera Fine Silk pocket square product image"
-        },
-        bow: {
-          src: "assets/sera-fine-silk/bow-tie.jpg",
-          alt: "Sera Fine Silk bow tie product image"
-        },
-        collection: {
-          src: "assets/sera-fine-silk/ties-collection.jpg",
-          alt: "Sera Fine Silk collection image"
-        }
-      },
-      gifting: {
-        hero: {
-          src: "assets/sera-fine-silk/gift-note.jpg",
-          alt: "Sera Fine Silk gift and handwritten-note related imagery"
-        },
-        detail: {
-          src: "assets/sera-fine-silk/gift-silk.jpg",
-          alt: "Sera Fine Silk luxury gifting silk imagery"
-        }
-      },
-      sticky: {
-        src: "assets/sera-fine-silk/tie-product.jpg",
-        alt: "Sera Fine Silk sticky CTA thumbnail"
+      {
+        badge: "Coordinated polish",
+        title: "Groom Party",
+        copy: "Use coordinated accessories for a polished group look with less effort.",
+        note: "Start with a coordinated formal edit.",
+        image: MEDIA.collection.src
       }
-    };
+    ];
+    const CURATED_EDIT = [
+      { label: "Lead look", title: "Tie-led formal edit", copy: "A polished first pick for weddings and events.", image: MEDIA.tie.src, tall: true },
+      { label: "Giftable", title: "Pocket square", copy: "Elegant and easy to give.", image: MEDIA.pocket.src },
+      { label: "Black tie", title: "Bow tie", copy: "Formal confidence with fewer steps.", image: MEDIA.bow.src },
+      { label: "Collection", title: "Color-led ties", copy: "More choice without the full catalog.", image: MEDIA.collection.src },
+      { label: "Mood", title: "Wedding tone", copy: "Let the occasion lead the purchase.", image: MEDIA.hero.src }
+    ];
 
-    const imageBindings = {
-      heroLifestyle: MEDIA.hero,
-      heroProduct: MEDIA.heroProduct,
-      heroCollection: MEDIA.collection,
-      tieImage: MEDIA.cards.tie,
-      pocketImage: MEDIA.cards.pocket,
-      bowImage: MEDIA.cards.bow,
-      collectionImage: MEDIA.cards.collection,
-      giftHero: MEDIA.gifting.hero,
-      giftDetail: MEDIA.gifting.detail,
-      stickyThumb: MEDIA.sticky
-    };
+    document.getElementById("heroImage").src = MEDIA.hero.src;
+    document.getElementById("heroImage").alt = MEDIA.hero.alt;
+    document.getElementById("heroSideOne").src = MEDIA.tie.src;
+    document.getElementById("heroSideOne").alt = MEDIA.tie.alt;
+    document.getElementById("heroSideTwo").src = MEDIA.giftSilk.src;
+    document.getElementById("heroSideTwo").alt = MEDIA.giftSilk.alt;
+    document.getElementById("storyOne").src = MEDIA.giftNote.src;
+    document.getElementById("storyOne").alt = MEDIA.giftNote.alt;
+    document.getElementById("storyTwo").src = MEDIA.hero.src;
+    document.getElementById("storyTwo").alt = MEDIA.hero.alt;
+    document.getElementById("floatThumb").src = MEDIA.tie.src;
+    document.getElementById("floatThumb").alt = MEDIA.tie.alt;
+    document.getElementById("floatTitle").textContent = PRIMARY_OFFER_TITLE;
 
-    Object.entries(imageBindings).forEach(([id, asset]) => {
-      const img = document.getElementById(id);
-      if (!img) return;
-      img.src = asset.src;
-      img.alt = asset.alt;
+    const occasionRail = document.getElementById("occasionRail");
+    const occasionTitle = document.getElementById("occasionTitle");
+    const occasionCopy = document.getElementById("occasionCopy");
+    const floatNote = document.getElementById("floatNote");
+
+    OCCASION_STORIES.forEach((story, index) => {
+      const card = document.createElement("article");
+      card.className = "occasion-card" + (index === 0 ? " active" : "");
+      card.innerHTML = `
+        <img src="${story.image}" alt="${story.title}">
+        <div class="occasion-copy">
+          <small>${story.badge}</small>
+          <h3>${story.title}</h3>
+          <p>${story.copy}</p>
+        </div>
+      `;
+      card.addEventListener("click", () => {
+        document.querySelectorAll(".occasion-card").forEach((node) => node.classList.remove("active"));
+        card.classList.add("active");
+        occasionTitle.textContent = story.title;
+        occasionCopy.textContent = story.copy;
+        floatNote.textContent = story.note;
+        document.getElementById("floatThumb").src = story.image;
+      });
+      occasionRail.appendChild(card);
+    });
+
+    const editorialGrid = document.getElementById("editorialGrid");
+    CURATED_EDIT.forEach((item) => {
+      const card = document.createElement("article");
+      card.className = "grid-card" + (item.tall ? " tall" : "");
+      card.innerHTML = `
+        <img src="${item.image}" alt="${item.title}">
+        <div class="grid-copy">
+          <small>${item.label}</small>
+          <h3>${item.title}</h3>
+          <p>${item.copy}</p>
+        </div>
+      `;
+      editorialGrid.appendChild(card);
     });
 
     document.querySelectorAll("[data-aff-link]").forEach((link) => {
@@ -831,20 +671,6 @@
       if (!link.textContent.trim()) {
         link.textContent = SECONDARY_CTA_TEXT;
       }
-    });
-
-    document.getElementById("stickyOfferTitle").textContent = PRIMARY_OFFER_TITLE;
-
-    document.querySelectorAll("[data-occasion-card]").forEach((card) => {
-      card.addEventListener("click", () => {
-        document.querySelectorAll("[data-occasion-card]").forEach((node) => node.classList.remove("active"));
-        card.classList.add("active");
-        document.getElementById("occasionTitle").textContent = card.dataset.title;
-        document.getElementById("occasionCopy").textContent = card.dataset.copy;
-        document.getElementById("heroOccasionNote").textContent = "Recommended angle: " + card.dataset.copy;
-        document.getElementById("closingOccasionNote").textContent = card.dataset.note;
-        document.getElementById("stickyOfferNote").textContent = card.dataset.note;
-      });
     });
   </script>
 </body>
